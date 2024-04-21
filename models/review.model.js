@@ -1,12 +1,12 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
 
-const reviewSchema = new Schema({
+const reviewSchema = new mongoose.Schema({
     id: String, 
     userId: String, 
     gameId: String, 
     text: String
 });
 
-const Review = model('Review', gameSchema);
+const Review = mongoose.model('Review', gameSchema);
 
-export default Review;
+module.exports = Review;

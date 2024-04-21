@@ -1,6 +1,6 @@
-import express from 'express';
-import { get, post, put, del } from 'games.controller.js';
-import userController from 'user.controller.js';
+const express = require('express');
+const gamesController = require('games.controller.js')
+const userController = require('user.controller.js')
 
 const app = express();
 // user controller
@@ -8,13 +8,13 @@ const app = express();
 
 
 // game controller
-app.get('/api/games/:id', get);
+app.get('/api/games/:id', gamesController.get);
 
-app.post('/api/games', post);
+app.post('/api/games', gamesController.post);
 
-app.put('/api/games/:id', put)
+app.put('/api/games/:id', gamesController.put)
 
-app.delete('/api/games/:id', del);
+app.delete('/api/games/:id', gamesController.delete);
 
 const PORT = 3000;
 app.listen(PORT, () => {

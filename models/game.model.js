@@ -1,4 +1,4 @@
-require('games.json')
+const gameFile = require('games.json')
 const mongoose = require('mongoose');
 
 const gameSchema = new mongoose.Schema({
@@ -11,8 +11,8 @@ const gameSchema = new mongoose.Schema({
 const Game = mongoose.model('Game', gameSchema);
 
 
-const jsonData = readFileSync(games, 'utf8');
-const data = JSON.parse(jsonData);
+const jsonData = readFileSync(gameFile, 'utf8');
+const games = JSON.parse(jsonData);
 
 function findById(id) {
 

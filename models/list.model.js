@@ -1,11 +1,11 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
 
-const listSchema = new Schema({
+const listSchema = new mongoose.Schema({
     id: String, 
     name: String, 
     userId: String
 });
 
-const List = model('List', listSchema);
+const List = mongoose.model('List', listSchema);
 
-export default List;
+module.exports = List;
