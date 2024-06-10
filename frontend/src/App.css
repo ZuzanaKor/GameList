@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+  color: white;
+  font-family: 'Tiny5', sans-serif;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+.matrix-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  z-index: 0; /* Ensure it is behind other content */
+}
+
+.matrix-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(6, 138, 6, 0.356) 1px,
+    rgba(140, 238, 140, 0.932) 2px
+  );
+  animation: matrix 1s infinite linear;
+}
+
+@keyframes matrix {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure it is above the matrix background */
+}
+
+.App-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.App-header h1 {
+  font-size: 5em;
+  font-family: 'Tiny5', sans-serif; /* Change the font */
+  color: #8648b3; /* Darker purple color */
+  text-shadow: 
+    0 0 5px #39FF14, /* Neon green outline */
+    0 0 10px #39FF14,
+    0 0 15px #39FF14,
+    0 0 20px #39FF14,
+    0 0 25px #39FF14,
+    0 0 30px #39FF14,
+    0 0 35px #39FF14;
+}
+
+.decorative-line {
+  width: 100%;
+  height: 2px;
+  background-color: #8648b3; /* Darker purple color */
+  margin: 20px 0; /* Add some margin to separate the line from other elements */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.user-menu {
+  position: relative;
+}
+
+.user-menu button {
+  background-color: #8648b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.user-menu button:hover {
+  background-color: #8648b3;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  flex-direction: column; /* Ensure the links are stacked vertically */
+}
+
+.user-menu:hover .user-dropdown {
+  display: flex; /* Use flex to enable flex-direction */
+}
+
+.user-dropdown a,
+.user-dropdown button {
+  display: block; /* Ensure each link/button takes up the full width */
+  margin: 5px 0; /* Add some margin to separate the links/buttons */
+}
+
+.home {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.center-block {
+  background: rgb(194, 191, 191);
+  color: black;
+  padding: 100px; /* Increase padding if needed */
+  width: 40vw; /* Increase width */
+  height: 80vh; /* Increase height */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Ensure the center block is above the matrix background */
+  position: relative;
+  overflow: auto; /* Add overflow auto to handle content overflow */
+  border: 5px solid #8648b3; /* Add a border with desired width, style, and color */
+}
+
+/* Additional styles for the Button component */
+.quick-link-button {
+  background-color: #8648b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.quick-link-button:hover {
+  background-color: #8648b3;
+}

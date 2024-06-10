@@ -1,0 +1,14 @@
+/* src/components/Button.css */
+.quick-link-button {
+    background-color: #8648b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+  
+  .quick-link-button:hover {
+    background-color: #8648b3;
+  }
