@@ -69,10 +69,10 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* <Route path="/games" element={<GameList games={games} />} /> */}
+              <Route path="/games" element={<GameList games={games} />} />
               <Route path="/add" element={<AddGame onAdd={addGame} />} />
               <Route path="/game/:id" element={<GameInfo games={games} />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/login" element={<Login onLogin={handleLogin} />} />
               <Route path="/signup" element={<Signup />} />
               {/* Add routes for signup and my-lists as needed */}
             </Routes>
